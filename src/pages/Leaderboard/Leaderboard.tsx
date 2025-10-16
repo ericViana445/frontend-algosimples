@@ -3,7 +3,7 @@
 import type React from "react"
 import { useState } from "react"
 import Sidebar from "../../components/sidebar/Sidebar"
-import "./leaderboard.css"
+import "./Leaderboard.css"
 
 const Leaderboard: React.FC = () => {
   const [activeNavItem, setActiveNavItem] = useState("leaderboard")
