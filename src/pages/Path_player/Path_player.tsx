@@ -61,7 +61,7 @@ const Path_player: React.FC = () => {
   const handleRegister = async () => {
     setRegisterError("")
     try {
-      const res = await fetch(`${API_URL}/api/auth/register`, {
+      const res = await fetch(`https://backend-algosimples.onrender.com/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
