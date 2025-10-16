@@ -41,7 +41,7 @@ const Perfil: React.FC<PerfilProps> = ({ onNavigate }) => {
     }
   }, [])
 
-  // 🔹 Função de logout
+  // 🔹 Função de logouat
   const handleLogout = () => {
     localStorage.removeItem("token")
     localStorage.removeItem("user")
