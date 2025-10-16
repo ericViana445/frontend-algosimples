@@ -1,11 +1,14 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import Sidebar from "../../components/sidebar/Sidebar"
-import Task from "../../components/Task/Task"
-import LessonTemplate from "../../components/lession/LessonTemplate"
-import { lessonsData } from "../../components/lession/lessionsData"
+import Sidebar from "../../components/sidebar/Sidebar.tsx"
+import Task from "../../components/Task/Task.tsx"
+import LessonTemplate from "../../components/lession/LessonTemplate.tsx"
+import { lessonsData } from "../../components/lession/lessionsData.ts"
 import "./path_player.css"
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 const Path_player: React.FC = () => {
   const [activeNavItem, setActiveNavItem] = useState("journey")
@@ -37,7 +40,7 @@ const Path_player: React.FC = () => {
   const handleLogin = async () => {
     setLoginError("")
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch(`${API_URL}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: loginEmail, password: loginPassword }),
@@ -58,7 +61,7 @@ const Path_player: React.FC = () => {
   const handleRegister = async () => {
     setRegisterError("")
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const res = await fetch(`${API_URL}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

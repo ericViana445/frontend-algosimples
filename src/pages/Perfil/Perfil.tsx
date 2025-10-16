@@ -3,8 +3,9 @@
 import type React from "react"
 import { useState, useEffect } from "react"
 import { jwtDecode } from "jwt-decode"
-import Sidebar from "../../components/sidebar/Sidebar"
+import Sidebar from "../../components/sidebar/Sidebar.tsx"
 import "./Perfil.css"
+const API_URL = import.meta.env.VITE_API_URL;
 
 interface PerfilProps {
   onNavigate?: (section: string) => void
@@ -32,7 +33,7 @@ const Perfil: React.FC<PerfilProps> = ({ onNavigate }) => {
 
     try {
       const decoded: DecodedToken = jwtDecode(token)
-      fetch(`http://localhost:5000/api/users/${decoded.id}`)
+      fetch(`${API_URL}api/users/${decoded.id}`)
         .then((res) => res.json())
         .then((data) => setUserData(data))
         .catch((err) => console.error("Erro ao carregar usuário:", err))
