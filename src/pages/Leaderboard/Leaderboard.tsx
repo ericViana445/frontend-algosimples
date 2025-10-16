@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import Sidebar from "../../components/sidebar/Sidebar"
+import Sidebar from "../../components/sidebar/Sidebar.tsx"
 import "./Leaderboard.css"
 
 const Leaderboard: React.FC = () => {
