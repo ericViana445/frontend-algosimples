@@ -2,8 +2,8 @@
 
 import type React from "react"
 import { useState } from "react"
-import Sidebar from "../../components/sidebar/Sidebar.tsx"
-import "./Leaderboard.css"
+import Sidebar from "../../components/sidebar/Sidebar"
+import "./leaderboard.css"
 
 const Leaderboard: React.FC = () => {
   const [activeNavItem, setActiveNavItem] = useState("leaderboard")

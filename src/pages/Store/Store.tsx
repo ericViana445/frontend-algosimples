@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Sidebar from "../../components/sidebar/Sidebar.tsx"
+import Sidebar from "../../components/sidebar/Sidebar"
 import "./Store.css"
 
 interface StoreItem {

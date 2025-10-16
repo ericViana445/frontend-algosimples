@@ -1,8 +1,8 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import LessonTemplate from "./LessonTemplate.tsx"
-import { lessonsData } from "./lessionsData.ts"
+import LessonTemplate from "./LessonTemplate"
+import { lessonsData } from "./lessionsData"
 import "./LessonsPage.css"
 
 console.log("%c🚀 lessonsData.ts carregado com sucesso!", "color: #38bdf8; font-weight: bold;")
