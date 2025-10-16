@@ -32,7 +32,7 @@ const Perfil: React.FC<PerfilProps> = ({ onNavigate }) => {
 
     try {
       const decoded: DecodedToken = jwtDecode(token)
-      fetch("https://backend-algosimples.onrender.com/api/users/${decoded.id}")
+      fetch(`https://backend-algosimples.onrender.com/api/users/${decoded.id}`)
         .then((res) => res.json())
         .then((data) => setUserData(data))
         .catch((err) => console.error("Erro ao carregar usuário:", err))
@@ -41,10 +41,9 @@ const Perfil: React.FC<PerfilProps> = ({ onNavigate }) => {
     }
   }, [])
 
-  // 🔹 Função de logouat
+  // 🔹 Função de logout
   const handleLogout = () => {
     localStorage.removeItem("token")
-    localStorage.removeItem("user")
     window.location.href = "/path" // redireciona para página principal
   }
 
