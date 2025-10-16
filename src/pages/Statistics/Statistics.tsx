@@ -2,8 +2,8 @@
 
 import type React from "react"
 import { useState } from "react"
-import Sidebar from "../../components/sidebar/Sidebar"
-import "./Statistics.css"
+import Sidebar from "../../components/sidebar/Sidebar.tsx"
+import "./statistics.css"
 
 interface TagStats {
   name: string
