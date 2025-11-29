@@ -70,36 +70,6 @@
   justify-content: center;
 }
 
-/* 🔒 Itens bloqueados (usuário não logado) */
-.nav-item.locked {
-  opacity: 0.5;
-  cursor: not-allowed;
-  position: relative;
-  transition: opacity 0.2s ease;
-}
-
-.nav-item.locked:hover {
-  opacity: 0.7;
-}
-
-/* Tooltip estilizado */
-.nav-item.locked:hover::after {
-  content: "🔒 Faça login para ter acesso a esta funcionalidade.";
-  position: absolute;
-  left: 110%;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #1f2937;
-  color: #f9fafb;
-  font-size: 12px;
-  white-space: nowrap;
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid #374151;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  z-index: 10;
-}
-
 @media (max-width: 768px) {
   .sidebar {
     width: 240px;
@@ -112,4 +82,19 @@
   .nav-item {
     padding: 10px 12px;
   }
+}
+
+/* 🔒 Itens bloqueados (sem login) */
+.nav-item.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-item.locked:hover {
+  background: transparent;
+  color: #94a3b8;
+}
+
+.nav-item.locked .nav-icon {
+  filter: grayscale(1);
 }

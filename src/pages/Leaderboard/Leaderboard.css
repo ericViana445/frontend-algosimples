@@ -15,24 +15,13 @@
   overflow-y: auto;
 }
 
-.leaderboard-header {
-  background: #4285f4;
-  padding: 20px 24px;
-  border-radius: 16px;
-  margin-bottom: 32px;
+.leaderboard-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-.leaderboard-header h2 {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
-}
 
-.leaderboard-header p {
-  margin: 4px 0 0;
-  font-size: 16px;
-  opacity: 0.9;
-}
 
 /* Lista de jogadores */
 .leaderboard-list {
@@ -54,8 +43,8 @@
 }
 
 .leaderboard-item.me {
-  background: #22c55e;
-  border: 1px solid #16a34a;
+  
+  border: 2px solid #16a34a;
   font-weight: 700;
 }
 
@@ -76,5 +65,5 @@
 
 .xp {
   font-weight: 600;
-  color: #facc15;
+  color: #9ca3af;
 }

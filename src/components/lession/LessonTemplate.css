@@ -16,64 +16,111 @@
 }
 
 .lesson-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #38bdf8;
-  margin-bottom: 2rem;
+  margin-bottom: -2rem;
 }
 
 .lesson-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: -2rem;
 }
 
 .content-heading {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 2rem;
   color: #38bdf8;
+  margin-bottom: -2rem;
 }
 
 .lesson-content p {
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1.7rem;
   color: #cbd5e1;
   text-align: justify;
 }
 
-/* ====== LADO DIREITO (PERGUNTAS) ====== */
-.lesson-right {
-  flex: 1;
-  padding: 3rem;
-  overflow-y: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* Improved question container with proper overflow handling */
 .question-container {
   width: 100%;
-  max-width: 520px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  padding: 1rem;
+  max-height: 100%;
+  overflow-y: auto;
+  font-size: 1.3rem;
 }
 
-.question-title {
-  font-size: 1.5rem;
+.lesson-question{
+font-size: 2rem;
   font-weight: 600;
   color: #f1f5f9;
   text-align: left;
   margin-bottom: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.6;
+}
+
+/* Better text wrapping for long questions */
+.question-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  text-align: left;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.6;
+}
+
+.lesson-image-container {
+  margin: 20px 0;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* Para responsividade */
+@media (max-width: 768px) {
+  .lesson-image {
+    max-height: 200px;
+  }
+}
+
+/* Fixed lesson-right to handle long content properly */
+.lesson-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+  overflow-y: auto;
+  min-height: 0;
 }
 
 /* ====== ALTERNATIVAS ====== */
 .alternatives-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
+  width: 100%;
 }
 
+/* Better text wrapping for alternative text */
 .alternative-button {
   display: flex;
   align-items: center;
@@ -83,10 +130,11 @@
   border-radius: 12px;
   padding: 1rem 1.25rem;
   color: #e2e8f0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: left;
   cursor: pointer;
   transition: all 0.2s ease;
+  width: 100%;
 }
 
 .alternative-button:hover:not(:disabled) {
@@ -128,13 +176,23 @@
   flex-shrink: 0;
 }
 
+/* Better text wrapping for alternative text */
+.alternative-text {
+  flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+}
+
 /* ====== FEEDBACK ====== */
 .feedback {
-  padding: 1rem;
+  padding-top: 3px;
+  padding-bottom: 3px;
   border-radius: 12px;
   text-align: center;
   font-weight: 500;
   font-size: 1.1rem;
+  width: 99%;
 }
 
 .correct-feedback {
@@ -153,14 +211,13 @@
 .action-buttons {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  gap: 1rem;
+  align-items: center;
+  width: 100%;
 }
 
 .submit-button,
 .continue-button {
   padding: 0.9rem 2rem;
-  font-size: 1rem;
   font-weight: 600;
   border: none;
   border-radius: 10px;
@@ -199,9 +256,14 @@
 }
 
 /* ====== BOTÃO SAIR ====== */
+.lesson-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
 .lesson-exit {
-  margin-top: 2rem;
-  align-self: center;
   padding: 0.6rem 1.4rem;
   background: transparent;
   border: 2px solid #475569;
@@ -209,23 +271,34 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 .lesson-exit:hover {
   background: #334155;
   color: #e2e8f0;
+  border-color: #64748b;
 }
 
-/* ====== SCROLL PERSONALIZADO ====== */
-.lesson-left::-webkit-scrollbar,
-.lesson-right::-webkit-scrollbar {
+/* Custom scrollbar for question container */
+.question-container::-webkit-scrollbar,
+.lesson-right::-webkit-scrollbar,
+.lesson-left::-webkit-scrollbar {
   width: 8px;
 }
 
-.lesson-left::-webkit-scrollbar-thumb,
-.lesson-right::-webkit-scrollbar-thumb {
+.question-container::-webkit-scrollbar-thumb,
+.lesson-right::-webkit-scrollbar-thumb,
+.lesson-left::-webkit-scrollbar-thumb {
   background: #475569;
   border-radius: 4px;
+}
+
+.question-container::-webkit-scrollbar-thumb:hover,
+.lesson-right::-webkit-scrollbar-thumb:hover,
+.lesson-left::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
 }
 
 /* ====== RESPONSIVIDADE ====== */
@@ -238,10 +311,32 @@
   .lesson-left {
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: 50vh;
   }
 
   .lesson-right {
-    padding-top: 1rem;
+    padding: 2rem;
+    max-height: 50vh;
+  }
+
+  .question-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .lesson-left,
+  .lesson-right {
+    padding: 1rem;
+  }
+
+  .question-title {
+    font-size: 16px;
+  }
+
+  .alternative-button {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -271,6 +366,7 @@
     transform: translateY(0);
   }
 }
+
 /* ====== CONTAINER GERAL DO RESUMO ====== */
 .summary-container {
   display: flex;
@@ -348,7 +444,8 @@
   border: none;
   border-radius: 12px;
   padding: 0.9rem 2.2rem;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
@@ -363,18 +460,17 @@
   transform: translateY(0);
 }
 
-/* ====== ANIMAÇÕES ====== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.continue-button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
+.continue-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ====== ANIMAÇÕES ====== */
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -409,6 +505,7 @@
     padding: 0.8rem 1.8rem;
   }
 }
+
 /* ====== BOTÃO REPETIR LIÇÃO ====== */
 .repeat-button {
   background: transparent;
@@ -435,3 +532,14 @@
   align-items: center;
 }
 
+.reward-section {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.reward-text {
+  font-size: 18px;
+  margin: 4px 0;
+  color: #facc15;
+  font-weight: 600;
+}
