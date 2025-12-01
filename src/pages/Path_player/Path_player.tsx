@@ -14,11 +14,14 @@ import Task from "../../components/Task/Taks.tsx"
 import Lesson from "../../components/lession/LessonTemplate.tsx"
 import { useNavigate } from "react-router-dom";
 import {
-  lessonsFase1,
-  lessonsFase2,
-  lessonsFase3,
-  lessonsFase4,
-  lessonsFase5,
+  lessonsBubbleDificil,
+  lessonsBubbleFacil,
+  lessonsInsertionFacil,
+  lessonsInsertionDificil,
+  lessonsMergeFacil,
+  lessonsMergeDificil,
+  lessonsQuickFacil,
+  lessonsQuickDificil,
 } from "../../components/lession/LessonData.ts"
 import { SuggestionWidget } from "../Statistics/Statistics";
 
