@@ -4,6 +4,7 @@ import type React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import { FaBook, FaTrophy, FaStore, FaUser, FaChartBar, FaLock } from "react-icons/fa";
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
 interface SidebarProps {
   activeItem: string;
@@ -39,8 +40,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeItem, onNavigate }) => {
   return (
     <div className="sidebar">
       <div className="logo">
-        <div className="logo-icon">{"</>"}</div>
-        <span className="logo-text">LFA Quest</span>
+        <div className="logo-icon bubble"></div>
+        <span className="logo-text">AlgoSimples</span>
       </div>
 
       <nav className="nav-menu">

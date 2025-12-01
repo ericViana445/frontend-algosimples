@@ -277,87 +277,151 @@ const Path_player: React.FC = () => {
   }
 
   const phaseData = [
+    // ------------------ MÓDULO 1 — BUBBLE SORT ------------------
     {
       phase: 1,
-      title: "Fundamentos dos Autômatos",
-      description: "Aprenda os conceitos básicos de autômatos finitos e gramáticas regulares.",
+      title: "Bubble Sort — Fase Fácil",
+      description:
+        "O Bubble Sort funciona comparando pares de elementos adjacentes e trocando-os sempre que estão fora de ordem. Esse processo se repete até que a lista esteja totalmente ordenada. Apesar de simples, não é eficiente para listas grandes.",
       icon: <SiProbot className="w-8 h-8 text-blue-500" />,
       xp: 75,
-      progress: 60,
+      progress: 0,
       questionsCount: 5,
       learningPoints: [
-        "Autômatos Finitos Não Determinísticos (AFND)",
-        "Gramáticas Regulares e Derivações",
-        "Conversão de AFN para AFD",
-        "Propriedades dos Autômatos",
-        "Expressões Aritméticas e Gramáticas",
+        "Como o Bubble Sort compara elementos adjacentes",
+        "Movimento do maior elemento para o final",
+        "Quando ocorrem trocas",
+        "Como detectar quando a lista já está ordenada",
+        "Por que não é eficiente para listas grandes"
       ],
     },
     {
       phase: 2,
-      title: "Aplicações Avançadas",
-      description: "Aprofunde seus conhecimentos com questões mais complexas sobre autômatos.",
-      icon: <FaCogs className="w-8 h-8 text-orange-500" />,
-      xp: 75,
-      progress: 30,
-      questionsCount: 5,
-      learningPoints: [
-        "Análise de Autômatos e Cadeias",
-        "Autômatos JFLAP e Transições",
-        "Autômatos Determinísticos vs Não Determinísticos",
-        "Linguagens Aceitas por AFD",
-        "Tipos de Gramática e Hierarquia de Chomsky",
-      ],
-    },
-    {
-      phase: 3,
-      title: "Expressões Regulares",
-      description: "Estude expressões regulares e sua relação com autômatos.",
-      icon: <FaCode className="w-8 h-8 text-pink-500" />,
-      xp: 100,
+      title: "Bubble Sort — Fase Difícil",
+      description:
+        "Nesta fase, você aprofunda o funcionamento interno do Bubble Sort, entendendo como a versão otimizada reduz passagens, como o algoritmo se comporta em diferentes cenários e por que é considerado estável.",
+      icon: <SiProbot className="w-8 h-8 text-cyan-500" />,
+      xp: 120,
       progress: 0,
       questionsCount: 5,
       learningPoints: [
-        "Expressões Regulares básicas",
-        "Fecho de Kleene",
-        "União e Interseção de Linguagens",
-        "Conversão para Autômatos",
-        "Exercícios práticos",
+        "Quando o Bubble Sort otimizado reduz passagens",
+        "Cenários com maior número de comparações",
+        "Por que o algoritmo é estável",
+        "Comportamento após k passagens completas",
+        "Implementação recursiva do Bubble Sort"
+      ],
+    },
+
+    // ------------------ MÓDULO 2 — INSERTION SORT ------------------
+    {
+      phase: 3,
+      title: "Insertion Sort — Fase Fácil",
+      description:
+        "O Insertion Sort percorre o vetor da esquerda para a direita, mantendo sempre uma parte ordenada. Cada novo elemento é inserido na posição correta, de forma semelhante a organizar cartas na mão.",
+      icon: <FaCogs className="w-8 h-8 text-orange-500" />,
+      xp: 75,
+      progress: 0,
+      questionsCount: 5,
+      learningPoints: [
+        "Como elementos são inseridos na parte ordenada",
+        "Melhor caso: vetor quase ordenado",
+        "Deslocamentos como operação principal",
+        "Estabilidade do algoritmo",
+        "Comparações com elementos anteriores"
       ],
     },
     {
       phase: 4,
-      title: "Avançado em Automatos",
-      description: "Consolide seu conhecimento em autômatos e expressões regulares.",
-      icon: <GiRocket className="w-8 h-8 text-green-500" />,
-      xp: 100,
+      title: "Insertion Sort — Fase Difícil",
+      description:
+        "Na fase avançada, analisamos o comportamento do Insertion Sort em diferentes distribuições de dados, seu custo em sistemas reais e quando ele supera algoritmos mais rápidos.",
+      icon: <FaCogs className="w-8 h-8 text-yellow-500" />,
+      xp: 120,
       progress: 0,
       questionsCount: 5,
       learningPoints: [
-        "Propriedades avançadas de autômatos",
-        "Expressões regulares complexas",
-        "Validação de autômatos",
-        "Simulações de autômatos",
-        "Desafios de integração",
+        "Quando supera algoritmos como Merge Sort",
+        "Custos no pior caso",
+        "Eficiência em sistemas com pequenos conjuntos de dados",
+        "Número máximo de deslocamentos",
+        "Por que o algoritmo é estável"
+      ],
+    },
+
+    // ------------------ MÓDULO 3 — QUICK SORT ------------------
+    {
+      phase: 5,
+      title: "Quick Sort — Fase Fácil",
+      description:
+        "O Quick Sort utiliza a estratégia de Dividir para Conquistar: escolhe um pivô, particiona elementos menores e maiores, e ordena recursivamente. É rápido na média e muito usado na prática.",
+      icon: <FaCode className="w-8 h-8 text-pink-500" />,
+      xp: 75,
+      progress: 0,
+      questionsCount: 5,
+      learningPoints: [
+        "O que é Quick Sort",
+        "Função do pivô",
+        "Complexidade média O(n log n)",
+        "Por que não é estável",
+        "Pior caso: pivô sempre mal posicionado"
       ],
     },
     {
-      phase: 5,
-      title: "Lema do Bombeamento e Linguagens Não Regulares",
-      description: "Domine o uso do Lema do Bombeamento para provar que certas linguagens não são regulares, explorando diferentes estratégias e exemplos clássicos.",
-      icon: <GiSpellBook className="w-8 h-8 text-purple-600" />,
-      xp: 100,
+      phase: 6,
+      title: "Quick Sort — Fase Difícil",
+      description:
+        "Aqui você aprofunda técnicas de particionamento, impacto da escolha do pivô, diferenças entre algoritmos internos e cenários onde o Quick Sort supera outros métodos.",
+      icon: <FaCode className="w-8 h-8 text-purple-500" />,
+      xp: 120,
       progress: 0,
       questionsCount: 5,
       learningPoints: [
-        "Entendimento formal do Lema do Bombeamento",
-        "Provas de não regularidade de linguagens como {0ⁿ1ⁿ} e {ww}",
-        "Bombeamento para cima e para baixo",
-        "Relação entre autômatos e o comprimento de bombeamento",
-        "Estratégias eficazes para aplicar o lema em provas formais"
+        "Importância da escolha do pivô",
+        "Métodos de partição: Lomuto vs Hoare",
+        "Quando o Quick Sort supera o Merge Sort",
+        "Por que não é estável",
+        "Pior caso: pivô sempre no primeiro elemento"
       ],
-    }
-  ]
+    },
+
+    // ------------------ MÓDULO 4 — MERGE SORT ------------------
+    {
+      phase: 7,
+      title: "Merge Sort — Fase Fácil",
+      description:
+        "O Merge Sort segue Dividir para Conquistar, dividindo a lista em duas até formar listas unitárias, depois intercalando essas listas de forma ordenada. É estável e sempre O(n log n).",
+      icon: <GiSpellBook className="w-8 h-8 text-green-500" />,
+      xp: 75,
+      progress: 0,
+      questionsCount: 5,
+      learningPoints: [
+        "Processo de divisão e intercalação",
+        "Estabilidade",
+        "Complexidade no pior caso",
+        "Desvantagem: uso de memória extra",
+        "Dividir para conquistar"
+      ],
+    },
+    {
+      phase: 8,
+      title: "Merge Sort — Fase Difícil",
+      description:
+        "A fase avançada explora aspectos internos como custos, estabilidade, comportamento em diferentes estruturas de dados e profundidade da divisão.",
+      icon: <GiSpellBook className="w-8 h-8 text-emerald-500" />,
+      xp: 120,
+      progress: 0,
+      questionsCount: 5,
+      learningPoints: [
+        "Por que exige memória extra",
+        "Complexidade constante mesmo com dados ordenados",
+        "Eficiência em estruturas sem acesso aleatório",
+        "Motivo da estabilidade",
+        "Profundidade de divisão ≈ log n"
+      ],
+    },
+  ];
+
 
   const handleNodeClick = (phase: number) => {
     const phaseInfo = phaseData.find((p) => p.phase === phase)
@@ -635,17 +699,27 @@ const Path_player: React.FC = () => {
                   {/* 🔹 Divisores de módulos */}
                   {phase.phase === 1 && (
                     <div className="module-divider">
-                      <span><SiProbot className="text-blue-500 text-2xl" /> Módulo 1 — Autômatos e Gramáticas Regulares</span>
+                      <span><SiProbot className="text-blue-500 text-2xl" /> Módulo 1 — Introdução à Ordenação</span>
                     </div>
                   )}
+
                   {phase.phase === 3 && (
                     <div className="module-divider">
-                      <span><FaCode className="w-8 h-8 text-pink-500" /> Módulo 2 — Expressões Regulares</span>
+                      <span><FaCode className="w-8 h-8 text-pink-500" /> Módulo 2 — Ordenação Quadrática</span>
                     </div>
                   )}
+
                   {phase.phase === 5 && (
                     <div className="module-divider">
-                      <span><GiSpellBook className="text-green-500 text-2xl" /> Módulo 3 — Lema do Bombeamento</span>
+                      <span><GiSpellBook className="text-green-500 text-2xl" /> Módulo 3 — Ordenação Eficiente</span>
+                    </div>
+                  )}
+
+                  {phase.phase === 7 && (
+                    <div className="module-divider">
+                      <span><GiSpellBook className="text-emerald-500 text-2xl" />
+                        Módulo 4 — Merge Sort
+                      </span>
                     </div>
                   )}
           
@@ -669,7 +743,10 @@ const Path_player: React.FC = () => {
                   {/* 🔸 Conector entre fases, exceto entre módulos */}
                   {index < phaseData.length - 1 &&
                     phase.phase !== 2 &&
-                    phase.phase !== 4 && <div className="path-connector"></div>}
+                    phase.phase !== 4 &&
+                    phase.phase !== 6 && (
+                      <div className="path-connector"></div>
+                  )} 
                 </React.Fragment>
               )
             })}
