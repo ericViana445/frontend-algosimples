@@ -4,7 +4,6 @@ import type React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import { FaBook, FaTrophy, FaStore, FaUser, FaChartBar, FaLock } from "react-icons/fa";
-import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
 interface SidebarProps {
   activeItem: string;

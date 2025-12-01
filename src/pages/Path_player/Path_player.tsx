@@ -1,7 +1,7 @@
 "use client"
 import { SiProbot } from "react-icons/si";
 import { FaCogs, FaCode } from "react-icons/fa";
-import { GiRocket, GiSpellBook } from "react-icons/gi";
+import { GiSpellBook } from "react-icons/gi";
 import { FaCoins, FaStar } from "react-icons/fa6";
 import { WiDaySunny } from "react-icons/wi";
 import { FaGamepad } from "react-icons/fa";
