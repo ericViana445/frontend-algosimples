@@ -14,8 +14,8 @@ import Task from "../../components/Task/Taks.tsx"
 import Lesson from "../../components/lession/LessonTemplate.tsx"
 import { useNavigate } from "react-router-dom";
 import {
-  lessonsBubbleDificil,
   lessonsBubbleFacil,
+  lessonsBubbleDificil,
   lessonsInsertionFacil,
   lessonsInsertionDificil,
   lessonsMergeFacil,
@@ -26,7 +26,9 @@ import {
 import { SuggestionWidget } from "../Statistics/Statistics";
 
 
-const lessons = [lessonsFase1, lessonsFase2, lessonsFase3, lessonsFase4, lessonsFase5]
+const lessons = [lessonsBubbleFacil, lessonsBubbleDificil, 
+  lessonsInsertionFacil, lessonsInsertionDificil, lessonsMergeFacil, 
+  lessonsMergeDificil, lessonsQuickFacil, lessonsQuickDificil]
 
 import "./path_player.css"
 
@@ -246,11 +248,14 @@ const Path_player: React.FC = () => {
     const tagNames = lowAccuracyTags.map((t: any) => t.tag);
 
     const allLessons = [
-      ...lessonsFase1,
-      ...lessonsFase2,
-      ...lessonsFase3,
-      ...lessonsFase4,
-      ...lessonsFase5,
+      ...lessonsBubbleFacil,
+      ...lessonsBubbleDificil,
+      ...lessonsInsertionFacil,
+      ...lessonsInsertionDificil,
+      ...lessonsMergeFacil,
+      ...lessonsMergeDificil,
+      ...lessonsQuickFacil,
+      ...lessonsQuickDificil,
     ];
 
     const reviewQuestions = allLessons.filter(
@@ -628,8 +633,8 @@ const Path_player: React.FC = () => {
     const totalQuestions = reviewMode
       ? reviewQuestions.length
       : currentPhase === 1
-        ? lessonsFase1.length
-        : lessonsFase2.length
+        ? lessonsBubbleFacil.length
+        : lessonsBubbleDificil.length
     const correctAnswers = phaseAnswers.filter((answer) => answer).length
     const phaseTitle = reviewMode
       ? `Revisão: ${reviewTags.join(", ")}`
