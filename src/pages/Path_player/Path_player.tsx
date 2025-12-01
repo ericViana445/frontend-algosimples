@@ -26,9 +26,16 @@ import {
 import { SuggestionWidget } from "../Statistics/Statistics";
 
 
-const lessons = [lessonsBubbleFacil, lessonsBubbleDificil, 
-  lessonsInsertionFacil, lessonsInsertionDificil, lessonsMergeFacil, 
-  lessonsMergeDificil, lessonsQuickFacil, lessonsQuickDificil]
+const lessons = [
+  lessonsBubbleFacil,
+  lessonsBubbleDificil,
+  lessonsInsertionFacil,
+  lessonsInsertionDificil,
+  lessonsMergeFacil,
+  lessonsMergeDificil,
+  lessonsQuickFacil,
+  lessonsQuickDificil,
+]
 
 import "./path_player.css"
 

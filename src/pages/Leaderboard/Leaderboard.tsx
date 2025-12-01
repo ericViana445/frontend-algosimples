@@ -9,11 +9,14 @@ import "./Leaderboard.css";
 import { SuggestionWidget } from "../Statistics/Statistics";
 import { useNavigate } from "react-router-dom";
 import {
-  lessonsFase1,
-  lessonsFase2,
-  lessonsFase3,
-  lessonsFase4,
-  lessonsFase5,
+  lessonsBubbleFacil,
+  lessonsBubbleDificil,
+  lessonsInsertionFacil,
+  lessonsInsertionDificil,
+  lessonsMergeFacil,
+  lessonsMergeDificil,
+  lessonsQuickFacil,
+  lessonsQuickDificil,
 } from "../../components/lession/LessonData";
 
 
@@ -129,11 +132,14 @@ const Leaderboard: React.FC = () => {
     const tagNames = lowAccuracyTags.map((t: any) => t.tag);
 
     const allLessons = [
-      ...lessonsFase1,
-      ...lessonsFase2,
-      ...lessonsFase3,
-      ...lessonsFase4,
-      ...lessonsFase5,
+      ...lessonsBubbleFacil,
+      ...lessonsBubbleDificil,
+      ...lessonsInsertionFacil,
+      ...lessonsInsertionDificil,
+      ...lessonsMergeFacil,
+      ...lessonsMergeDificil,
+      ...lessonsQuickFacil,
+      ...lessonsQuickDificil,
     ];
 
     const reviewQuestions = allLessons.filter(

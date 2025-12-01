@@ -1,11 +1,14 @@
 "use client";
 import { useNavigate } from "react-router-dom";
 import {
-  lessonsFase1,
-  lessonsFase2,
-  lessonsFase3,
-  lessonsFase4,
-  lessonsFase5,
+  lessonsBubbleFacil,
+  lessonsBubbleDificil,
+  lessonsInsertionFacil,
+  lessonsInsertionDificil,
+  lessonsMergeFacil,
+  lessonsMergeDificil,
+  lessonsQuickFacil,
+  lessonsQuickDificil,
 } from "../../components/lession/LessonData";
 import { SuggestionWidget } from "../Statistics/Statistics";
 import { FaUser, FaCoins, FaStar, FaUserSecret, FaRobot, FaUserGraduate, FaLaptopCode} from "react-icons/fa6";
@@ -222,11 +225,14 @@ const Perfil: React.FC<PerfilProps> = ({ onNavigate }) => {
     const tagNames = lowAccuracyTags.map((t: any) => t.tag);
 
     const allLessons = [
-      ...lessonsFase1,
-      ...lessonsFase2,
-      ...lessonsFase3,
-      ...lessonsFase4,
-      ...lessonsFase5,
+      ...lessonsBubbleFacil,
+      ...lessonsBubbleDificil,
+      ...lessonsInsertionFacil,
+      ...lessonsInsertionDificil,
+      ...lessonsMergeFacil,
+      ...lessonsMergeDificil,
+      ...lessonsQuickFacil,
+      ...lessonsQuickDificil,
     ];
 
     const reviewQuestions = allLessons.filter(

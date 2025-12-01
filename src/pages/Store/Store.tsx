@@ -10,11 +10,14 @@ import { jwtDecode } from "jwt-decode";
 import Sidebar from "../../components/sidebar/Sidebar";
 import "./Store.css";
 import {
-  lessonsFase1,
-  lessonsFase2,
-  lessonsFase3,
-  lessonsFase4,
-  lessonsFase5,
+  lessonsBubbleFacil,
+  lessonsBubbleDificil,
+  lessonsInsertionFacil,
+  lessonsInsertionDificil,
+  lessonsMergeFacil,
+  lessonsMergeDificil,
+  lessonsQuickFacil,
+  lessonsQuickDificil,
 } from "../../components/lession/LessonData";
 
 import { useNavigate } from "react-router-dom";
@@ -78,11 +81,14 @@ const handleReviewTopic = () => {
 
   // 3️⃣ Importa todas as lições (igual ao arquivo de Estatísticas)
   const allLessons = [
-    ...lessonsFase1,
-    ...lessonsFase2,
-    ...lessonsFase3,
-    ...lessonsFase4,
-    ...lessonsFase5,
+      ...lessonsBubbleFacil,
+      ...lessonsBubbleDificil,
+      ...lessonsInsertionFacil,
+      ...lessonsInsertionDificil,
+      ...lessonsMergeFacil,
+      ...lessonsMergeDificil,
+      ...lessonsQuickFacil,
+      ...lessonsQuickDificil,
   ];
 
   // 4️⃣ Filtra as questões que correspondem a essas tags

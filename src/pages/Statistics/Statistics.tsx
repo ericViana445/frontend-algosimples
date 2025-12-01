@@ -8,11 +8,14 @@ import { jwtDecode } from "jwt-decode"
 import { useNavigate } from "react-router-dom"
 import Sidebar from "../../components/sidebar/Sidebar"
 import {
-  lessonsFase1,
-  lessonsFase2,
-  lessonsFase3,
-  lessonsFase4,
-  lessonsFase5,
+  lessonsBubbleFacil,
+  lessonsBubbleDificil,
+  lessonsInsertionFacil,
+  lessonsInsertionDificil,
+  lessonsMergeFacil,
+  lessonsMergeDificil,
+  lessonsQuickFacil,
+  lessonsQuickDificil,
 } from "../../components/lession/LessonData"
 import "./statistics.css"
 
@@ -110,11 +113,14 @@ const handleReviewTopic = () => {
 
   // 3️⃣ Junta todas as lições de todas as fases
   const allLessons = [
-    ...lessonsFase1,
-    ...lessonsFase2,
-    ...lessonsFase3,
-    ...lessonsFase4,
-    ...lessonsFase5,
+    ...lessonsBubbleFacil,
+    ...lessonsBubbleDificil,
+    ...lessonsInsertionFacil,
+    ...lessonsInsertionDificil,
+    ...lessonsMergeFacil,
+    ...lessonsMergeDificil,
+    ...lessonsQuickFacil,
+    ...lessonsQuickDificil,
   ]
 
   // 4️⃣ Filtra todas as questões que possuem essas tags
