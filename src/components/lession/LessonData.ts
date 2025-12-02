@@ -53,6 +53,7 @@ export const lesson_bubble_facil_q2 = {
   tags: ["Bubble Sort", "algoritmos de ordenação", "comportamento"]
 };
 
+import l2q3 from "./LessonDataImages/l2q3.png"
 // Questão 3 – Bubble Sort Fácil
 export const lesson_bubble_facil_q3 = {
   title: "Bubble Sort — Condições de Troca",
@@ -69,6 +70,8 @@ export const lesson_bubble_facil_q3 = {
   ],
 
   correctAnswer: 1,
+
+  image: l2q3,
 
   tags: ["Bubble Sort", "algoritmos de ordenação", "condições"]
 };
@@ -221,6 +224,7 @@ export const lesson_bubble_dificil_q5 = {
 
   correctAnswer: 0,
 
+
   tags: ["Bubble Sort", "recursão", "implementação"]
 };
 
@@ -280,6 +284,7 @@ export const lesson_insertion_facil_q2 = {
   tags: ["Insertion Sort", "eficiência", "cenários"]
 };
 
+import l3q3 from "./LessonDataImages/l3q3.png"
 // Questão 3 – Insertion Sort Fácil
 export const lesson_insertion_facil_q3 = {
   title: "Insertion Sort — Operação Fundamental",
@@ -296,6 +301,8 @@ export const lesson_insertion_facil_q3 = {
   ],
 
   correctAnswer: 1,
+
+  image: l3q3,
 
   tags: ["Insertion Sort", "operações", "fundamentos"]
 };
@@ -320,6 +327,7 @@ export const lesson_insertion_facil_q4 = {
   tags: ["Insertion Sort", "estabilidade", "elementos iguais"]
 };
 
+import l3q5 from "./LessonDataImages/l3q5.jpeg"
 // Questão 5 – Insertion Sort Fácil
 export const lesson_insertion_facil_q5 = {
   title: "Insertion Sort — Comparações",
@@ -336,6 +344,8 @@ export const lesson_insertion_facil_q5 = {
   ],
 
   correctAnswer: 2,
+
+    image: l3q5,
 
   tags: ["Insertion Sort", "comparações", "técnica"]
 };
@@ -416,7 +426,7 @@ export const lesson_insertion_dificil_q3 = {
   tags: ["Insertion Sort", "aplicabilidade", "sistemas"]
 };
 
-import l5q4 from "./LessonDataImages/l5q4.jpeg"
+import l4q4 from "./LessonDataImages/l5q4.jpeg"
 // Questão 4 – Insertion Sort Difícil
 export const lesson_insertion_dificil_q4 = {
   title: "Insertion Sort — Análise de Deslocamentos",
@@ -434,7 +444,7 @@ export const lesson_insertion_dificil_q4 = {
 
   correctAnswer: 1,
 
-  image: l5q4,
+  image: l4q4,
 
   tags: ["Insertion Sort", "análise", "deslocamentos"]
 };
@@ -475,7 +485,7 @@ export const lessonsInsertionDificil = [
 // FASE 1 - FÁCIL
 // =======================
 
-import l6q1 from "./LessonDataImages/l6q1.jpeg"
+import l5q1 from "./LessonDataImages/l6q1.jpeg"
 // Questão 1 – Quick Sort Fácil
 export const lesson_quick_facil_q1 = {
   title: "Quick Sort — Definição",
@@ -493,12 +503,12 @@ export const lesson_quick_facil_q1 = {
 
   correctAnswer: 1,
 
-  image: l6q1,
+  image: l5q1,
 
   tags: ["Quick Sort", "definição", "algoritmos"]
 };
 
-import l6q2 from "./LessonDataImages/l6q2.jpeg"
+import l5q2 from "./LessonDataImages/l6q2.jpeg"
 // Questão 2 – Quick Sort Fácil
 export const lesson_quick_facil_q2 = {
   title: "Quick Sort — Função do Pivô",
@@ -516,7 +526,7 @@ export const lesson_quick_facil_q2 = {
 
   correctAnswer: 2,
 
-  image: l6q2,
+  image: l5q2,
 
   tags: ["Quick Sort", "pivô", "função"]
 };
@@ -673,7 +683,7 @@ export const lesson_quick_dificil_q4 = {
   tags: ["Quick Sort", "estabilidade", "limitações"]
 };
 
-import l7q5 from "./LessonDataImages/l7q5.jpeg"
+import l6q5 from "./LessonDataImages/l7q5.jpeg"
 // Questão 5 – Quick Sort Difícil
 export const lesson_quick_dificil_q5 = {
   title: "Quick Sort — Caso Específico",
@@ -691,7 +701,7 @@ export const lesson_quick_dificil_q5 = {
 
   correctAnswer: 2,
 
-  image: l7q5,
+  image: l6q5,
 
   tags: ["Quick Sort", "casos específicos", "análise"]
 };
@@ -713,7 +723,7 @@ export const lessonsQuickDificil = [
 // =======================
 
 
-//import il8 from "./LessonDataImages/il8.jpeg"
+import il7 from "./LessonDataImages/il8.jpeg"
 // Questão 1 – Merge Sort Fácil
 export const lesson_merge_facil_q1 = {
   title: "Merge Sort — Funcionamento",
@@ -730,6 +740,8 @@ export const lesson_merge_facil_q1 = {
   ],
 
   correctAnswer: 2,
+
+  image: il7,
 
   tags: ["Merge Sort", "funcionamento", "algoritmos"]
 };
@@ -842,6 +854,8 @@ export const lesson_merge_dificil_q1 = {
   ],
 
   correctAnswer: 1,
+
+  image: l10q2,
 
   tags: ["Merge Sort", "memória", "requisitos"]
 };
