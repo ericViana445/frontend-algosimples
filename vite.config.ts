@@ -6,6 +6,9 @@ export default defineConfig({
   preview: {
     host: '0.0.0.0',
     port: Number(process.env.PORT) || 4173,
-    allowedHosts: ['front-lfaquest.onrender.com']
+    allowedHosts: [
+      'front-lfaquest.onrender.com',
+      'frontend-algosimples.onrender.com'
+    ]
   }
 })
