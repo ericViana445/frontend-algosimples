@@ -71,8 +71,8 @@ const Statistics: React.FC = () => {
       const userId = decoded.id
 
       Promise.all([
-        fetch(`https://backend-lfaquest.onrender.com/api/users/${userId}`).then((r) => r.json()),
-        fetch(`https://backend-lfaquest.onrender.com/api/users/${userId}/analytics`).then((r) => r.json()),
+        fetch(`https://backend-algosimples.onrender.com/api/users/${userId}`).then((r) => r.json()),
+        fetch(`https://backend-algosimples.onrender.com/api/users/${userId}/analytics`).then((r) => r.json()),
       ])
         .then(([user, analytics]) => {
           setUserData(user)

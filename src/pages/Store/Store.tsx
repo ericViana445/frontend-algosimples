@@ -127,7 +127,7 @@ const handleReviewTopic = () => {
       const userId = decoded.id;
 
       // Busca informações do usuário
-      fetch(`https://backend-lfaquest.onrender.com/api/users/${userId}`)
+      fetch(`https://backend-algosimples.onrender.com/api/users/${userId}`)
         .then((res) => {
           if (!res.ok) throw new Error("Erro ao buscar usuário");
           return res.json();
@@ -140,14 +140,14 @@ const handleReviewTopic = () => {
         .catch((err) => console.error("Erro ao carregar usuário:", err));
 
       // Busca compras do usuário
-      fetch(`https://backend-lfaquest.onrender.com/api/store/purchases/${userId}`)
+      fetch(`https://backend-algosimples.onrender.com/api/store/purchases/${userId}`)
         .then((res) => res.json())
         .then((data) => {
           setPurchasedItems(data);
         })
         .catch((err) => console.error("Erro ao buscar compras:", err));
       
-      fetch(`https://backend-lfaquest.onrender.com/api/users/${userId}/analytics`)
+      fetch(`https://backend-algosimples.onrender.com/api/users/${userId}/analytics`)
         .then((res) => res.json())
         .then((data) => {
           setAnalytics(data);
@@ -213,7 +213,7 @@ const handleReviewTopic = () => {
 
     if (diamonds >= item.cost) {
       try {
-        const res = await fetch("https://backend-lfaquest.onrender.com/api/store/purchase", {
+        const res = await fetch("https://backend-algosimples.onrender.com/api/store/purchase", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

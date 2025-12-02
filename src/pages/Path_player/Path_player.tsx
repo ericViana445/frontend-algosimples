@@ -97,7 +97,7 @@ const Path_player: React.FC = () => {
       const decoded: DecodedToken = jwtDecode(token)
       const userId = decoded.id
 
-      fetch(`https://backend-lfaquest.onrender.com/api/users/${userId}`)
+      fetch(`https://backend-algosimples.onrender.com/api/users/${userId}`)
         .then((res) => res.json())
         .then((data) => {
           const parsedUnlocked = data.unlocked_phases ? JSON.parse(data.unlocked_phases) : ["1"]
@@ -105,7 +105,7 @@ const Path_player: React.FC = () => {
           console.log("✅ Fases desbloqueadas:", parsedUnlocked)
         })
       // analytics
-      fetch(`https://backend-lfaquest.onrender.com/api/users/${userId}/analytics`)
+      fetch(`https://backend-algosimples.onrender.com/api/users/${userId}/analytics`)
         .then((res) => res.json())
         .then((data) => {
           setAnalytics(data);
@@ -144,7 +144,7 @@ const Path_player: React.FC = () => {
 
     try {
       // Buscar o estado atual do usuário
-      const resUser = await fetch(`https://backend-lfaquest.onrender.com/api/users/${localUser.id}`);
+      const resUser = await fetch(`https://backend-algosimples.onrender.com/api/users/${localUser.id}`);
       const freshUserData = await resUser.json();
       const currentPhases = freshUserData.unlocked_phases
         ? JSON.parse(freshUserData.unlocked_phases)
@@ -160,7 +160,7 @@ const Path_player: React.FC = () => {
         console.log(`🔓 Liberando nova fase: ${nextPhase}`, updatedPhases);
 
         const res = await fetch(
-          `https://backend-lfaquest.onrender.com/api/users/${localUser.id}/unlockedPhases`,
+          `https://backend-algosimples.onrender.com/api/users/${localUser.id}/unlockedPhases`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
@@ -199,7 +199,7 @@ const Path_player: React.FC = () => {
   const handleLogin = async () => {
     setLoginError("")
     try {
-      const res = await fetch("https://backend-lfaquest.onrender.com/api/auth/login", {
+      const res = await fetch("https://backend-algosimples.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: loginEmail, password: loginPassword }),
@@ -219,7 +219,7 @@ const Path_player: React.FC = () => {
   const handleRegister = async () => {
     setRegisterError("")
     try {
-      const res = await fetch("https://backend-lfaquest.onrender.com/api/auth/register", {
+      const res = await fetch("https://backend-algosimples.onrender.com/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -497,7 +497,7 @@ const Path_player: React.FC = () => {
 
       try {
         console.log("📡 Enviando dados para verificar conquistas (automaton lesson).");
-        const res = await fetch(`https://backend-lfaquest.onrender.com/api/users/${userData.id}/checkAchievements`);
+        const res = await fetch(`https://backend-algosimples.onrender.com/api/users/${userData.id}/checkAchievements`);
         const data = await res.json();
         console.log("🔙 Resposta conquistas:", data);
       } catch (err) {
@@ -524,7 +524,7 @@ const Path_player: React.FC = () => {
 
       try {
         console.log("📡 Enviando dados para verificar conquistas (fase normal).");
-        const res = await fetch(`https://backend-lfaquest.onrender.com/api/users/${userData.id}/checkAchievements`);
+        const res = await fetch(`https://backend-algosimples.onrender.com/api/users/${userData.id}/checkAchievements`);
         const data = await res.json();
         console.log("🔙 Resposta conquistas:", data);
       } catch (err) {
@@ -541,7 +541,7 @@ const Path_player: React.FC = () => {
           console.log(`🔓 Liberando nova fase: ${nextPhase}`, updatedPhases);
 
           const response = await fetch(
-            `https://backend-lfaquest.onrender.com/api/users/${userData.id}/unlockedPhases`,
+            `https://backend-algosimples.onrender.com/api/users/${userData.id}/unlockedPhases`,
             {
               method: "PUT",
               headers: { "Content-Type": "application/json" },

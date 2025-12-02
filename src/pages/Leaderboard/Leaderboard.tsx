@@ -74,7 +74,7 @@ const Leaderboard: React.FC = () => {
       const userId = decoded.id;
 
       // 🔹 Busca o usuário logado
-      fetch(`https://backend-lfaquest.onrender.com/api/users/${userId}`)
+      fetch(`https://backend-algosimples.onrender.com/api/users/${userId}`)
         .then((res) => {
           if (!res.ok) throw new Error("Erro ao buscar usuário");
           return res.json();
@@ -86,7 +86,7 @@ const Leaderboard: React.FC = () => {
         .catch((err) => console.error("Erro ao carregar usuário:", err));
 
       // 🔹 Busca o ranking real do banco
-      fetch("https://backend-lfaquest.onrender.com/api/users/leaderboard/all")
+      fetch("https://backend-algosimples.onrender.com/api/users/leaderboard/all")
         .then((res) => {
           if (!res.ok) throw new Error("Erro ao buscar ranking");
           return res.json();
@@ -98,7 +98,7 @@ const Leaderboard: React.FC = () => {
         .catch((err) => console.error("Erro ao carregar leaderboard:", err));
 
         // analytics
-        fetch(`https://backend-lfaquest.onrender.com/api/users/${userId}/analytics`)
+        fetch(`https://backend-algosimples.onrender.com/api/users/${userId}/analytics`)
           .then((res) => res.json())
           .then((data) => {
             setAnalytics(data);
