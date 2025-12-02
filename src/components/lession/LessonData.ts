@@ -23,11 +23,14 @@ export const lesson_bubble_facil_q1 = {
     "Escolhe o menor e coloca no início"
   ],
 
+  image: "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fasfmbhsv8q0r7ltfc2sk.gif",
+
   correctAnswer: 2,
 
   tags: ["Bubble Sort", "algoritmos de ordenação", "iteração"]
 };
 
+import l1q2 from "./LessonDataImages/l1q2.png"
 // Questão 2 – Bubble Sort Fácil
 export const lesson_bubble_facil_q2 = {
   title: "Bubble Sort — Comportamento dos Elementos",
@@ -44,6 +47,8 @@ export const lesson_bubble_facil_q2 = {
   ],
 
   correctAnswer: 1,
+
+  image: l1q2, 
 
   tags: ["Bubble Sort", "algoritmos de ordenação", "comportamento"]
 };
@@ -138,6 +143,7 @@ export const lesson_bubble_dificil_q1 = {
   tags: ["Bubble Sort", "otimização", "complexidade"]
 };
 
+import l2q2 from "./LessonDataImages/l2q2.png"
 // Questão 2 – Bubble Sort Difícil
 export const lesson_bubble_dificil_q2 = {
   title: "Bubble Sort — Análise de Comparações",
@@ -154,6 +160,8 @@ export const lesson_bubble_dificil_q2 = {
   ],
 
   correctAnswer: 0,
+
+  Image: l2q2,
 
   tags: ["Bubble Sort", "comparações", "análise"]
 };
@@ -227,7 +235,7 @@ export const lessonsBubbleDificil = [
 // =======================
 // 🎯 MÓDULO 2 - INSERTION SORT
 // =======================
-
+ img: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Insertion-sort-example.gif?20110309111239"
 // =======================
 // 🔹 FASE 1 - FÁCIL
 // =======================
@@ -361,6 +369,8 @@ export const lesson_insertion_dificil_q1 = {
 
   correctAnswer: 2,
 
+  image: "https://miro.medium.com/v2/resize:fit:633/1*JP-wURjwf4k23U2G3GNQDw.gif",
+
   tags: ["Insertion Sort", "comparação", "performance"]
 };
 
@@ -401,9 +411,12 @@ export const lesson_insertion_dificil_q3 = {
 
   correctAnswer: 2,
 
+  image:"https://upload.wikimedia.org/wikipedia/commons/c/c2/Sorting_odd_even_anim.gif?20220209223142",
+
   tags: ["Insertion Sort", "aplicabilidade", "sistemas"]
 };
 
+import l5q4 from "./LessonDataImages/l5q4.jpeg"
 // Questão 4 – Insertion Sort Difícil
 export const lesson_insertion_dificil_q4 = {
   title: "Insertion Sort — Análise de Deslocamentos",
@@ -420,6 +433,8 @@ export const lesson_insertion_dificil_q4 = {
   ],
 
   correctAnswer: 1,
+
+  image: l5q4,
 
   tags: ["Insertion Sort", "análise", "deslocamentos"]
 };
@@ -453,13 +468,14 @@ export const lessonsInsertionDificil = [
 ];
 
 // =======================
-// 🎯 MÓDULO 3 - QUICK SORT
+// MÓDULO 3 - QUICK SORT
 // =======================
 
 // =======================
-// 🔹 FASE 1 - FÁCIL
+// FASE 1 - FÁCIL
 // =======================
 
+import l6q1 from "./LessonDataImages/l6q1.jpeg"
 // Questão 1 – Quick Sort Fácil
 export const lesson_quick_facil_q1 = {
   title: "Quick Sort — Definição",
@@ -477,9 +493,12 @@ export const lesson_quick_facil_q1 = {
 
   correctAnswer: 1,
 
+  image: l6q1,
+
   tags: ["Quick Sort", "definição", "algoritmos"]
 };
 
+import l6q2 from "./LessonDataImages/l6q2.jpeg"
 // Questão 2 – Quick Sort Fácil
 export const lesson_quick_facil_q2 = {
   title: "Quick Sort — Função do Pivô",
@@ -496,6 +515,8 @@ export const lesson_quick_facil_q2 = {
   ],
 
   correctAnswer: 2,
+
+  image: l6q2,
 
   tags: ["Quick Sort", "pivô", "função"]
 };
@@ -652,6 +673,7 @@ export const lesson_quick_dificil_q4 = {
   tags: ["Quick Sort", "estabilidade", "limitações"]
 };
 
+import l7q5 from "./LessonDataImages/l7q5.jpeg"
 // Questão 5 – Quick Sort Difícil
 export const lesson_quick_dificil_q5 = {
   title: "Quick Sort — Caso Específico",
@@ -668,6 +690,8 @@ export const lesson_quick_dificil_q5 = {
   ],
 
   correctAnswer: 2,
+
+  image: l7q5,
 
   tags: ["Quick Sort", "casos específicos", "análise"]
 };
@@ -688,6 +712,8 @@ export const lessonsQuickDificil = [
 // 🔹 FASE 1 - FÁCIL
 // =======================
 
+
+//import il8 from "./LessonDataImages/il8.jpeg"
 // Questão 1 – Merge Sort Fácil
 export const lesson_merge_facil_q1 = {
   title: "Merge Sort — Funcionamento",
@@ -820,6 +846,7 @@ export const lesson_merge_dificil_q1 = {
   tags: ["Merge Sort", "memória", "requisitos"]
 };
 
+import l10q2 from "./LessonDataImages/l10q2.png"
 // Questão 2 – Merge Sort Difícil
 export const lesson_merge_dificil_q2 = {
   title: "Merge Sort — Consistência de Performance",
@@ -837,9 +864,12 @@ export const lesson_merge_dificil_q2 = {
 
   correctAnswer: 1,
 
+  image: l10q2,
+
   tags: ["Merge Sort", "consistência", "performance"]
 };
 
+import l10q3 from "./LessonDataImages/l10q3.webp"
 // Questão 3 – Merge Sort Difícil
 export const lesson_merge_dificil_q3 = {
   title: "Merge Sort — Aplicações Específicas",
@@ -856,6 +886,8 @@ export const lesson_merge_dificil_q3 = {
   ],
 
   correctAnswer: 0,
+
+    image: l10q3,
 
   tags: ["Merge Sort", "aplicações", "eficiência"]
 };
@@ -880,6 +912,7 @@ export const lesson_merge_dificil_q4 = {
   tags: ["Merge Sort", "estabilidade", "justificativa"]
 };
 
+import l10q5 from "./LessonDataImages/l10q5.jpeg"
 // Questão 5 – Merge Sort Difícil
 export const lesson_merge_dificil_q5 = {
   title: "Merge Sort — Profundidade de Divisão",
@@ -896,6 +929,8 @@ export const lesson_merge_dificil_q5 = {
   ],
 
   correctAnswer: 1,
+
+    image: l10q5,
 
   tags: ["Merge Sort", "divisão", "profundidade"]
 };

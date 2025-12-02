@@ -623,8 +623,8 @@ const Path_player: React.FC = () => {
       }
     }
 
-    const currentPhaseLessons = lessons[currentPhase]
-    const currentLesson = currentPhaseLessons[currentQuestionIndex - 1]
+    const currentPhaseLessons = lessons[currentPhase - 1]
+    const currentLesson = currentPhaseLessons[currentQuestionIndex]
 
     if (currentLesson) {
       return {
@@ -692,7 +692,7 @@ const Path_player: React.FC = () => {
         onExit={handleExitLesson}
         isAutomaton={currentLessonType === "automaton"}
         questionIndex={currentQuestionIndex}
-        totalQuestions={lessons[currentPhase - 1].length}
+        totalQuestions={lessons[currentPhase].length}
       />
     )
   }
