@@ -378,7 +378,7 @@ const validateAutomatonEnhanced = (
 
         // ✅ 1. Registrar conclusão da lição
         const response = await axios.post(
-          "https://backend-lfaquest.onrender.com/api/lesson/complete",
+          "https://backend-algosimples.onrender.com/api/lesson/complete",
           payload
         );
 
@@ -414,7 +414,7 @@ const validateAutomatonEnhanced = (
           try {
             const user = JSON.parse(localStorage.getItem("user") || "{}");
             if (user?.id) {
-              const resUser = await fetch(`https://backend-lfaquest.onrender.com/api/users/${user.id}`);
+              const resUser = await fetch(`https://backend-algosimples.onrender.com/api/users/${user.id}`);
               const freshUserData = await resUser.json();
               const currentPhases = freshUserData.unlocked_phases
                 ? JSON.parse(freshUserData.unlocked_phases)
@@ -426,7 +426,7 @@ const validateAutomatonEnhanced = (
                 console.log(`🔓 Liberando nova fase diretamente no LessonTemplate: ${nextPhase}`, updatedPhases);
               
                 const res = await fetch(
-                  `https://backend-lfaquest.onrender.com/api/users/${user.id}/unlockedPhases`,
+                  `https://backend-algosimples.onrender.com/api/users/${user.id}/unlockedPhases`,
                   {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },
