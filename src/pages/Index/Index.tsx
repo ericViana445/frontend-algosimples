@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
 import {
@@ -9,13 +8,11 @@ import {
   FaTrophy,
   FaRoute,
 } from "react-icons/fa6";
-import { IoClose } from "react-icons/io5";
 
 const Index: React.FC = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [step, setStep] = useState<"choose" | "login">("choose");
-  const [loadingLogin, setLoadingLogin] = useState(false);
   const navigate = useNavigate();
+
+
 
   const topics = [
     {
