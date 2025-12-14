@@ -124,6 +124,8 @@ const Path_player: React.FC = () => {
     const handleFaseConcluida = () => {
       console.log("📢 Evento 'faseConcluida' detectado pelo Path_player!");
       unlockNextPhase(); // ← chama a função de desbloqueio
++      // Incrementa contador de fases concluídas (controlador principal)
++      incrementCompletedPhasesCount();
     };
 
     window.addEventListener("faseConcluida", handleFaseConcluida);
@@ -131,6 +133,26 @@ const Path_player: React.FC = () => {
       window.removeEventListener("faseConcluida", handleFaseConcluida);
     };
   }, []);
+
+  // 🔢 Incrementa o contador de fases concluídas assim que uma fase finaliza
+  const incrementCompletedPhasesCount = () => {
+    try {
+      const raw = localStorage.getItem("user") || "{}";
+      const user = JSON.parse(raw);
+      const current = Number(user?.completed_phases_count ?? 0);
+      const updated = current + 1;
+      const updatedUser = { ...user, completed_phases_count: updated };
+      localStorage.setItem("user", JSON.stringify(updatedUser));
+      setUserData((prev: any) => ({ ...(prev || {}), completed_phases_count: updated }));
+      // Notifica listeners para atualizar UI (sidebar etc.)
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new Event("completedPhasesChanged"));
+        console.log("📢 Evento 'completedPhasesChanged' disparado (Path_player)!");
+      }
+    } catch (err) {
+      console.error("❌ Falha ao incrementar contador de fases concluídas:", err);
+    }
+  };
 
     // 🔓 Função dedicada para desbloquear próxima fase
   const unlockNextPhase = async () => {
@@ -182,6 +204,11 @@ const Path_player: React.FC = () => {
             ...prev,
             unlocked_phases: updatedPhases,
           }));
+          // Notifica outras partes da aplicação que as fases desbloqueadas mudaram
+          if (typeof window !== "undefined") {
+            window.dispatchEvent(new Event("unlockedPhasesChanged"));
+            console.log("📢 Evento 'unlockedPhasesChanged' disparado (Path_player)!");
+          }
         } else {
           console.error("❌ Erro ao atualizar progresso:", data);
         }

@@ -407,6 +407,11 @@ const validateAutomatonEnhanced = (
           console.log("📢 Evento 'faseConcluida' disparado!");
           
         }
+        // 🔔 Notificar que unlocked_phases no localStorage pode ter sido atualizado
+        if (typeof window !== "undefined") {
+          window.dispatchEvent(new Event("unlockedPhasesChanged"));
+          console.log("📢 Evento 'unlockedPhasesChanged' disparado!");
+        }
 
 
           // 🔓 NOVO: desbloquear próxima fase
@@ -444,6 +449,11 @@ const validateAutomatonEnhanced = (
                   // Atualiza localStorage
                   const updatedUser = { ...user, unlocked_phases: updatedPhases };
                   localStorage.setItem("user", JSON.stringify(updatedUser));
+                    // Notifica mudança para listeners (sidebar, etc.)
+                    if (typeof window !== "undefined") {
+                      window.dispatchEvent(new Event("unlockedPhasesChanged"));
+                      console.log("📢 Evento 'unlockedPhasesChanged' disparado (LessonTemplate)!");
+                    }
                 } else {
                   console.error("❌ Erro ao atualizar progresso via LessonTemplate:", data);
                 }
@@ -508,12 +518,8 @@ const validateAutomatonEnhanced = (
   };
 
   // 🧩 Emita evento quando a fase for concluída
-  useEffect(() => {
-    if (faseConcluida) {
-      console.log("📢 Emitindo evento 'faseConcluida' (LessonTemplate)");
-      window.dispatchEvent(new Event("faseConcluida"));
-    }
-  }, [faseConcluida]);
+  // Nota: evitamos emitir evento duplicado aqui — o evento já é disparado
+  // explicitamente quando a lição é concluída dentro de `handleLessonComplete`.
   
 
 
